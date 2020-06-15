@@ -1,18 +1,19 @@
-from ledSimple import *
+from ledPulse import *
 from led import *
+from time import sleep
 
 
 def main():
   print("hello world")
-  ledState = ledSimple()
-  led = ledContext(17,18,27, ledState)
+  ledState = ledPulse()
   ledState.setColor(0,0,1)
+  led = ledContext(17,18,27, ledState)
+  led.on()
+  sleep(4)
+  ledState.setColor(1,0,1)
+  led.off()
   led.on()
   sleep(2)
-  led.brightness = .5
-  sleep(2)
-  led.off()
-  sleep(1)
 
 
 
